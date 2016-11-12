@@ -1,9 +1,9 @@
 {
-  "name": "React Boilerplate",
+  "name": "Basim Hennawi",
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "48x48",
+      "sizes": "32x32",
       "type": "image/png",
       "density": 1.0
     },

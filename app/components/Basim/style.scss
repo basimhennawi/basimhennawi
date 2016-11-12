@@ -1,0 +1,38 @@
+html {
+  background: url(../../static/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.basimContainer { 
+  height: 80vh;
+  width: 100vw;
+}
+
+.avatarContainer, .title, .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  margin-top: 20vh;
+  width: 12vh;
+  height: 20vh;
+  content:url(../../static/avatar.png);
+}
+
+.title, .subtitle {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  height: 10vh;
+  font-size: 2em;
+}
+
+.subtitle {
+  height: 2vh;
+  font-size: 1.2em;
+}
