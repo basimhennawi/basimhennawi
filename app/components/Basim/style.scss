@@ -1,25 +1,46 @@
-html {
-  background: url(../../static/background.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+$mobile-width: 768px;
+$tablet-width: 992px;
+
 .basimContainer { 
-  height: 80vh;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  /* Mobile */
+  @media (max-width: $mobile-width) {
+    margin: 10vh 0 10vh;
+  }
 }
 
-.avatarContainer, .title, .subtitle {
+.contentContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .avatar {
-  margin-top: 20vh;
-  width: 12vh;
-  height: 20vh;
+  /* Mobile */
+  @media (max-width: $mobile-width) {
+    margin-bottom: 6vh;
+    width: 15vh;
+    height: 25vh;
+  }
+
+  /* Tablet */
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+    margin: 8vh 0 4vh;
+    width: 10vh;
+    height: 15vh;
+  }
+  
+  /* Desktop */
+  margin: 8vw 0 2vw;
+  width: 6vw;
+  height: 10vw;
+
   content:url(../../static/avatar.png);
 }
 
@@ -28,11 +49,77 @@ html {
 }
 
 .title {
-  height: 10vh;
-  font-size: 2em;
+  /* Mobile */
+  @media (max-width: $mobile-width) {
+    font-size: 2em;
+  }
+
+  /* Tablet */
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+    font-size: 1.8em;
+  }
+  
+  /* Desktop */
+  font-size: 2.4em;
 }
 
 .subtitle {
-  height: 2vh;
-  font-size: 1.2em;
+  /* Mobile */
+  @media (max-width: $mobile-width) {
+    font-size: 1.4em;
+  }
+
+  /* Tablet */
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+    font-size: 1.2em;
+  }
+  
+  /* Desktop */
+  font-size: 1.6em;
+}
+
+.socialContainer {
+    /* Mobile */
+  @media (max-width: $mobile-width) {
+    width: 70vw;
+  }
+
+  /* Tablet */
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+    width: 60vw;
+  }
+  
+  /* Desktop */
+  width: 50vw;
+
+  color: #fff;
+  display: flex;
+  height: calc(100vh - (51vh + 81px);
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.s-icon {
+  /* Mobile */
+  @media (max-width: $mobile-width) {
+    font-size: 2em;
+  }
+
+  /* Tablet */
+  @media (min-width: $mobile-width) and (max-width: $tablet-width) {
+    font-size: 1.8em;
+  }
+  
+  /* Desktop */
+  font-size: 3.5em;
+  color: #fff;
+}
+
+a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #808080;
 }
