@@ -43,6 +43,7 @@ module.exports = require('./webpack.base.babel')({
         minifyURLs: true,
       },
       inject: true,
+      favicon: 'app/favicon.ico',
     }),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
