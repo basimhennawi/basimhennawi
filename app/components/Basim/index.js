@@ -6,6 +6,7 @@ import Linkedin from 'static/Linkedin.html';
 import Github from 'static/Github.html';
 import Stackoverflow from 'static/Stackoverflow.html';
 import Couchsurfing from 'static/Couchsurfing.html';
+import Hackerrank from 'static/Hackerrank.html';
 import messages from './messages';
 import classes from './style.scss'
 
@@ -50,6 +51,10 @@ export class Basim extends React.Component {
             href='https://www.couchsurfing.com/people/basim-hennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Couchsurfing }}/>
+          <a 
+            href='https://www.hackerrank.com/basimhennawi'
+            className={classNames("icon")}
+            dangerouslySetInnerHTML={{__html: Hackerrank }}/>
         </div>
       </div>
     );
