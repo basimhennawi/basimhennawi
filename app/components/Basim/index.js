@@ -7,6 +7,7 @@ import Github from 'static/Github.html';
 import Stackoverflow from 'static/Stackoverflow.html';
 import Couchsurfing from 'static/Couchsurfing.html';
 import Hackerrank from 'static/Hackerrank.html';
+import Doulingo from 'static/doulingo.html';
 import messages from './messages';
 import classes from './style.scss'
 
@@ -27,37 +28,41 @@ export class Basim extends React.Component {
           </div>
         </div>
         <div className={classNames('socialContainer')}>
-          <a 
+          <a
             href='https://www.facebook.com/basimhennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Facebook }}/>
-          <a 
+          <a
             href='https://twitter.com/private_basim'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Twitter }}/>
-          <a 
+          <a
             href='https://eg.linkedin.com/in/basimhennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Linkedin }}/>
-          <a 
+          <a
             href='https://github.com/basimhennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Github }}/>
-          <a 
+          <a
             href='http://stackoverflow.com/users/5433516/basim-hennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Stackoverflow }}/>
-          <a 
+          <a
             href='https://www.couchsurfing.com/people/basim-hennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Couchsurfing }}/>
-          <a 
+          <a
             href='https://www.hackerrank.com/basimhennawi'
             className={classNames("icon")}
             dangerouslySetInnerHTML={{__html: Hackerrank }}/>
+          <a
+            href='https://www.duolingo.com/basimhennawi'
+            className={classNames("icon")}
+            dangerouslySetInnerHTML={{__html: Doulingo }}/>
         </div>
       </div>
-    );
+    )
   }
 }
 
