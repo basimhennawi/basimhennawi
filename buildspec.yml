@@ -21,7 +21,7 @@ phases:
       - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
       - echo Entered the post_build phase...
       - aws s3 sync --delete --acl public-read 'dist' "s3://basimhennawi.com"
-      - aws cloudfront create-invalidation --distribution-id 112345678 --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id E2H5KUK8776W57 --paths "/*"
 
 artifacts:
   files:
