@@ -20,8 +20,8 @@ phases:
     commands:
       - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
       - echo Entered the post_build phase...
-      - aws s3 sync --delete --acl public-read 'dist' "s3://basimhennawi.com"
-      - aws cloudfront create-invalidation --distribution-id E2H5KUK8776W57 --paths "/*"
+      - aws s3 sync --delete --acl public-read 'dist' "s3://bh-frontends/basimhennawi.com"
+      - aws cloudfront create-invalidation --distribution-id E1XK5OP27LCWGR --paths "/*"
 
 artifacts:
   files:
