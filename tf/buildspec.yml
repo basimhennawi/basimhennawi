@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Install phase staging..
+      - npm i -g npm@latest
+      - npm i -g @angular/cli
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - npm i
+  build:
+    commands:
+      - echo Entered the build phase...
+      - ng build --configuration=production --base-href ""
+  post_build:
+    commands:
+      - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
+      - echo Entered the post_build phase...
+      - aws s3 sync --delete --acl public-read 'dist' "s3://bh-frontends/basimhennawi.com"
+      - aws cloudfront create-invalidation --distribution-id E1XK5OP27LCWGR --paths "/*"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/'
+  discard-paths: no
