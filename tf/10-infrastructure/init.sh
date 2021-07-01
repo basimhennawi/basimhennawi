@@ -13,7 +13,7 @@ APP=$(jq -r .app ../common.tfvars.json)
 SERVICE=$(jq -r .service ../common.tfvars.json)
 
 TF_WORKSPACE_KEY_PREFIX="envs"
-TF_STATE_KEY="10-s3"
+TF_STATE_KEY="10-infrastructure"
 
 
 
