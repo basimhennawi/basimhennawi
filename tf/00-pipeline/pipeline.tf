@@ -1,5 +1,3 @@
-
-
 resource "aws_codepipeline" "this" {
   name = local.basename
   role_arn = aws_iam_role.codepipeline_role.arn
@@ -37,20 +35,35 @@ resource "aws_codepipeline" "this" {
   }
 
   stage {
-    name = "${var.env}"
+    name = "Deploy"
 
     action {
-      name = "deploy"
+      name = "Infrastructure"
       category = "Build"
       owner = "AWS"
       provider = "CodeBuild"
       input_artifacts = [
         "source_output"]
       version = "1"
-      run_order = 10
+      run_order = 1
 
       configuration = {
-        ProjectName = module.codebuild_deploy.name
+        ProjectName = module.codebuild_deploy_infrastructure.name
+      }
+    }
+
+    action {
+      name = "Project"
+      category = "Build"
+      owner = "AWS"
+      provider = "CodeBuild"
+      input_artifacts = [
+        "source_output"]
+      version = "1"
+      run_order = 2
+
+      configuration = {
+        ProjectName = module.codebuild_deploy_project.name
       }
     }
   }
